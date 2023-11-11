@@ -2,6 +2,8 @@ import os, re, csv
 
 os.chdir(os.path.dirname(__file__))
 
+GAME_LOG_FILE_DIR = "script_log.txt"
+
 LINE_HEADER = ":era_statistics_logging::"
 REGEX_PROV_DATA = re.compile(r"£[0-9]+px£(£[0-9]+px£)?")
 REGEX_EVENT_DATE = re.compile(r"\[\d{4}\.\d{2}\.\d{2}\]")
@@ -24,7 +26,7 @@ CSV_DATA = {
 }
 
 try:
-    with open("C:\\Users\\Gabriel\\Documents\\Paradox Interactive\\Europa Universalis IV\\logs\\game.log") as log_file, open("./meiou.csv", "w", newline="") as csv_file:
+    with open(GAME_LOG_FILE_DIR) as log_file, open("./meiou.csv", "w", newline="") as csv_file:
 
         data_per_year = dict()
 

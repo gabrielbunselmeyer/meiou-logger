@@ -14,11 +14,10 @@ def follow(file):
         if LINE_HEADER in line:
             yield line
         else:
-            time.sleep(0.5)
             continue
 
 try:
-    with open(GAME_LOG_DIR) as game_log_file, open(SCRIPT_LOG_NAME, "w+", newline="") as script_log_file:
+    with open(GAME_LOG_DIR) as game_log_file, open(SCRIPT_LOG_NAME, "a+", newline="") as script_log_file:
         print("Watching game.log.")
 
         for line in follow(game_log_file):
