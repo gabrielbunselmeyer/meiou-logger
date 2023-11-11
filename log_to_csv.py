@@ -3,7 +3,6 @@ import os, re, csv
 os.chdir(os.path.dirname(__file__))
 
 LINE_HEADER = ":era_statistics_logging::"
-# RE_VALUE = re.compile(r"(.*?)\W*?(?:£[0-9]+px£)*([0-9\.]+)")
 REGEX_PROV_DATA = re.compile(r"£[0-9]+px£(£[0-9]+px£)?")
 REGEX_EVENT_DATE = re.compile(r"\[\d{4}\.\d{2}\.\d{2}\]")
 
@@ -66,4 +65,3 @@ try:
 
 except Exception as e:
     print(e)
-    # input("Press enter to exit...")
