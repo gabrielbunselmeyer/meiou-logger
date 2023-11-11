@@ -1,0 +1,25 @@
+namespace = POP_Logging_Era
+
+country_event = {
+    id = POP_Logging_Era.1
+    title = no_localisation
+    desc = no_localisation
+    picture = MEIOU_AND_TAXES_eventPicture
+
+    is_triggered_only = yes
+    hidden = yes
+
+    immediate = {
+        hidden_effect = {
+            every_country = {
+                limit = {
+                    ai = no
+                }
+
+                every_owned_province = {
+                    log = ":era_statistics_logging::[This.GetName], [GV_SF_Total], [GV_RE_Total], [GV_SF_In], [GV_RE_In], [GV_SF_Wealth], [GV_RE_Wealth], [GV_Tax_EfficUni], [GV_Prov_BUPow], [GV_Prov_BULoy], [GV_Admin_EfficUni], [GV_TaxD_Revenue], [GV_TaxD_Farming], [GV_TaxD_Corruption], [GV_TaxD_Total]"
+                }
+            }
+        }
+    }
+}
