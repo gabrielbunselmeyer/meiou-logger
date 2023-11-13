@@ -41,7 +41,8 @@ try:
                 province_data_array = [prov]
 
                 for entry in data:
-                    province_data_array.append(re.sub(REGEX_PROV_DATA, "", entry))
+                    number_with_decimal_point = re.sub(REGEX_PROV_DATA, "", entry)
+                    province_data_array.append(int(str(number_with_decimal_point).replace('.', '')))
 
                 data_per_year[event_year].append(province_data_array)
 
